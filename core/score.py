@@ -1,1 +1,1 @@
-score = {"High": 3}
+score = {"High": 3, "Medium": 2}
