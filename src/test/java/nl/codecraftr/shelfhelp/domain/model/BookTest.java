@@ -1,4 +1,4 @@
-package nl.codecraftr.shelfhelp;
+package nl.codecraftr.shelfhelp.domain.model;
 
 import org.junit.jupiter.api.Test;
 
