@@ -2,7 +2,7 @@ package nl.codecraftr.shelfhelp;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Unit test for simple App.
@@ -13,6 +13,6 @@ public class AppTest {
      */
     @Test
     public void shouldAnswerWithTrue() {
-        assertTrue(true);
+        assertThat(true).isTrue();
     }
 }
