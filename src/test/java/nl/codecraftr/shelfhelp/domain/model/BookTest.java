@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BookTest {
-    private final Book book = new Book("Pragmatic Programmer", 4, 5);
+    private final Book book = new Book("Pragmatic Programmer", Effort.LOW, Payoff.HIGH);
 
     @Test
     public void shouldHaveTitle() {
@@ -14,11 +14,11 @@ public class BookTest {
 
     @Test
     void shouldHaveEffort() {
-        assertThat(book.effort()).isEqualTo(4);
+        assertThat(book.effort()).isEqualTo(Effort.LOW);
     }
 
     @Test
     void shouldHavePayoff() {
-        assertThat(book.payoff()).isEqualTo(5);
+        assertThat(book.payoff()).isEqualTo(Payoff.HIGH);
     }
 }

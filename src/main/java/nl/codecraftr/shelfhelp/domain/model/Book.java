@@ -1,4 +1,7 @@
 package nl.codecraftr.shelfhelp.domain.model;
 
-record Book(String title, int effort, int payoff) {
+/**
+ * Book metadata with estimated effort and payoff.
+ */
+public record Book(String title, Effort effort, Payoff payoff) {
 }
