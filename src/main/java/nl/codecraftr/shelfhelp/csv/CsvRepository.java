@@ -3,7 +3,9 @@ package nl.codecraftr.shelfhelp.csv;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import nl.codecraftr.shelfhelp.domain.model.Book;
 
@@ -23,16 +25,16 @@ public class CsvRepository {
     return Collections.emptySet();
   }
 
-  private String readCsvEntries() {
+  private List<String> readCsvEntries() {
+    var result = new ArrayList<String>();
     var fileName = "/books.csv";
 
     var inputStream = this.getClass().getResourceAsStream(fileName);
-    var resultStringBuilder = new StringBuilder();
     try (var br
         = new BufferedReader(new InputStreamReader(inputStream))) {
       String line;
       while ((line = br.readLine()) != null) {
-        resultStringBuilder.append(line).append("\n");
+        result.add(line);
       }
     } catch (Exception e) {
       System.out.println("Error reading file");
@@ -43,6 +45,6 @@ public class CsvRepository {
         System.out.println("Error closing file input stream");
       }
     }
-    return resultStringBuilder.toString();
+    return result;
   }
 }
