@@ -1,7 +1,7 @@
 package nl.codecraftr.shelfhelp.csv;
 
 import java.io.BufferedReader;
-import java.io.InputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.Set;
@@ -16,10 +16,19 @@ public class CsvRepository {
    * Retrieve all books from file.
    */
   public Set<Book> getAll() {
+    var csvContents = readCsvEntries();
 
-    InputStream inputStream = this.getClass().getResourceAsStream("/books.csv");
-    StringBuilder resultStringBuilder = new StringBuilder();
-    try (BufferedReader br
+    System.out.println(csvContents);
+
+    return Collections.emptySet();
+  }
+
+  private String readCsvEntries() {
+    var fileName = "/books.csv";
+
+    var inputStream = this.getClass().getResourceAsStream(fileName);
+    var resultStringBuilder = new StringBuilder();
+    try (var br
         = new BufferedReader(new InputStreamReader(inputStream))) {
       String line;
       while ((line = br.readLine()) != null) {
@@ -27,10 +36,13 @@ public class CsvRepository {
       }
     } catch (Exception e) {
       System.out.println("Error reading file");
+    } finally {
+      try {
+        inputStream.close();
+      } catch (IOException e) {
+        System.out.println("Error closing file input stream");
+      }
     }
-
-    System.out.println(resultStringBuilder);
-
-    return Collections.emptySet();
+    return resultStringBuilder.toString();
   }
 }
