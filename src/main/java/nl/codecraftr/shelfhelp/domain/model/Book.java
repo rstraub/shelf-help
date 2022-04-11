@@ -6,6 +6,6 @@ package nl.codecraftr.shelfhelp.domain.model;
 public record Book(String title, Effort effort, Payoff payoff) {
 
   public int calculateScore() {
-    return effort().points;
+    return effort.points + payoff.points;
   }
 }
