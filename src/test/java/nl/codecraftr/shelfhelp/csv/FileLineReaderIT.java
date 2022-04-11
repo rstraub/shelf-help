@@ -12,8 +12,8 @@ class FileLineReaderIT {
     var expected = List.of(
         "Title,Effort,Payoff",
         "Pragmatic Programmer,LOW,MEDIUM",
-        "Programmers Brain,VERY LOW,MEDIUM",
-        "Domain Driven Design,HIGH,VERY HIGH"
+        "Programmers Brain,VERY_LOW,MEDIUM",
+        "Domain Driven Design,HIGH,VERY_HIGH"
     );
 
     var fileReader = new FileLineReader();
