@@ -6,7 +6,13 @@ import nl.codecraftr.shelfhelp.domain.model.Payoff;
 
 class CsvConverter {
 
+  private static final String SEPARATOR = ",";
+
   static Book toBook(String s) {
-    return new Book("Pragmatic Programmer", Effort.LOW, Payoff.MEDIUM);
+    var splits = s.split(SEPARATOR);
+    var title = splits[0];
+    var effort = Effort.valueOf(splits[1]);
+    var payoff = Payoff.valueOf(splits[2]);
+    return new Book(title, effort, payoff);
   }
 }
