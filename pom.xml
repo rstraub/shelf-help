@@ -30,7 +30,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>nl.codecraftr.shelfhelp.App</mainClass>
+              <mainClass>nl.codecraftr.shelfhelp.ShelfHelp</mainClass>
             </manifest>
           </archive>
         </configuration>

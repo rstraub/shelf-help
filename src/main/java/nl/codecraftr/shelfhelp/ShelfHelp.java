@@ -5,7 +5,7 @@ import nl.codecraftr.shelfhelp.csv.CsvBookRepository;
 /**
  * Shelf help.
  */
-public class App {
+public class ShelfHelp {
 
   /**
    * Cli runner.
