@@ -1,7 +1,7 @@
 package nl.codecraftr.shelfhelp.csv;
 
-import java.util.Collections;
 import java.util.Set;
+import java.util.stream.Collectors;
 import nl.codecraftr.shelfhelp.domain.model.Book;
 
 /**
@@ -13,13 +13,12 @@ public class CsvRepository {
    * Retrieve all books from csv file.
    */
   public Set<Book> getAll() {
-    var csvContents = new FileLineReader().lines();
-    csvContents
+    return new FileLineReader()
+        .lines()
         .stream()
         .filter(this::isContentRow)
-        .forEach(System.out::println);
-
-    return Collections.emptySet();
+        .map(CsvConverter::toBook)
+        .collect(Collectors.toSet());
   }
 
   private Boolean isContentRow(String line) {

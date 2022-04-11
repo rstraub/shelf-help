@@ -8,8 +8,8 @@ class CsvConverter {
 
   private static final String SEPARATOR = ",";
 
-  static Book toBook(String s) {
-    var splits = s.split(SEPARATOR);
+  static Book toBook(String csvEntry) {
+    var splits = csvEntry.split(SEPARATOR);
     var title = splits[0];
     var effort = Effort.valueOf(splits[1]);
     var payoff = Payoff.valueOf(splits[2]);
