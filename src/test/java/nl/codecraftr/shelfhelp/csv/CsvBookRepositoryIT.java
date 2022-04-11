@@ -11,11 +11,11 @@ import org.junit.jupiter.api.Test;
 
 class CsvBookRepositoryIT {
 
-  private CsvRepository repository;
+  private CsvBookRepository repository;
 
   @BeforeEach
   void setUp() {
-    repository = new CsvRepository();
+    repository = new CsvBookRepository();
   }
 
   @Test

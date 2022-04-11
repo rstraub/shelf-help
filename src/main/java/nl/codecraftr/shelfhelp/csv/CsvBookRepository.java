@@ -7,7 +7,7 @@ import nl.codecraftr.shelfhelp.domain.model.Book;
 /**
  * Book repository for csv files.
  */
-public class CsvRepository {
+public class CsvBookRepository {
 
   /**
    * Retrieve all books from csv file.
