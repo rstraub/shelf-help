@@ -19,8 +19,11 @@ public class CsvRepository {
    */
   public Set<Book> getAll() {
     var csvContents = readCsvEntries();
-
-    System.out.println(csvContents);
+    final var headerRow = "Title,Effort,Payoff";
+    csvContents
+        .stream()
+        .filter(line -> !line.equals(headerRow))
+        .forEach(System.out::println);
 
     return Collections.emptySet();
   }
@@ -37,12 +40,12 @@ public class CsvRepository {
         result.add(line);
       }
     } catch (Exception e) {
-      System.out.println("Error reading file");
+      System.out.println("Error reading csv file: " + e);
     } finally {
       try {
         inputStream.close();
       } catch (IOException e) {
-        System.out.println("Error closing file input stream");
+        System.out.println("Error closing csv file: " + e);
       }
     }
     return result;

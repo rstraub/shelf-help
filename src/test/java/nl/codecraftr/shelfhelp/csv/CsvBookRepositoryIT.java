@@ -7,7 +7,6 @@ import nl.codecraftr.shelfhelp.domain.model.Book;
 import nl.codecraftr.shelfhelp.domain.model.Effort;
 import nl.codecraftr.shelfhelp.domain.model.Payoff;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class CsvBookRepositoryIT {
@@ -20,7 +19,6 @@ class CsvBookRepositoryIT {
   }
 
   @Test
-  @Disabled("WIP")
   void shouldReturnBooksGivenCsvEntries() {
     var expected = Set.of(
         new Book("Pragmatic Programmer", Effort.LOW, Payoff.MEDIUM),
