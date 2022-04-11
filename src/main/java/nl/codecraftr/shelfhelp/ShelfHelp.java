@@ -1,6 +1,7 @@
 package nl.codecraftr.shelfhelp;
 
 import nl.codecraftr.shelfhelp.csv.CsvBookRepository;
+import nl.codecraftr.shelfhelp.domain.model.Book;
 
 /**
  * Shelf help.
@@ -16,6 +17,6 @@ public class ShelfHelp {
     }
     var path = args[0];
 
-    new CsvBookRepository(path).getAll().forEach(System.out::println);
+    new CsvBookRepository(path).getAll().stream().map(Book::title).forEach(System.out::println);
   }
 }
