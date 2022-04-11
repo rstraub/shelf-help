@@ -10,12 +10,18 @@ import nl.codecraftr.shelfhelp.domain.model.BookRepository;
  */
 public class CsvBookRepository implements BookRepository {
 
+  private final String csvFilePath;
+
+  public CsvBookRepository(String csvFilePath) {
+    this.csvFilePath = csvFilePath;
+  }
+
   /**
    * Retrieve all books from csv file.
    */
   @Override
   public Set<Book> getAll() {
-    return new FileLineReader()
+    return new FileLineReader(csvFilePath)
         .lines()
         .stream()
         .filter(this::isContentRow)

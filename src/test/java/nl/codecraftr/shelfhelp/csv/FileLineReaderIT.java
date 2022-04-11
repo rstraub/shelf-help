@@ -16,7 +16,7 @@ class FileLineReaderIT {
         "Domain Driven Design,HIGH,VERY_HIGH"
     );
 
-    var fileReader = new FileLineReader();
+    var fileReader = new FileLineReader("./src/test/resources/books.csv");
     var result = fileReader.lines();
 
     assertThat(result).isEqualTo(expected);

@@ -8,6 +8,6 @@ import nl.codecraftr.shelfhelp.csv.CsvBookRepository;
 public class App {
 
   public static void main(String[] args) {
-    new CsvBookRepository().getAll().forEach(System.out::println);
+    new CsvBookRepository("./src/test/resources/books.csv").getAll().forEach(System.out::println);
   }
 }

@@ -11,12 +11,18 @@ import java.util.List;
 
 class FileLineReader {
 
+  private final String csvFilePath;
+
+  public FileLineReader(String csvFilePath) {
+    this.csvFilePath = csvFilePath;
+  }
+
   public List<String> lines() {
     var result = new ArrayList<String>();
     InputStream inputStream = null;
 
     try {
-      File csvFile = new File("./src/test/resources/books.csv");
+      File csvFile = new File(csvFilePath);
       System.out.println("Attempting to read csv at: " + csvFile.getPath());
 
       inputStream = new FileInputStream(csvFile);

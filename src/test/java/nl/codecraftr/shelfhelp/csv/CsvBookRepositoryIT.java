@@ -15,7 +15,7 @@ class CsvBookRepositoryIT {
 
   @BeforeEach
   void setUp() {
-    repository = new CsvBookRepository();
+    repository = new CsvBookRepository("./src/test/resources/books.csv");
   }
 
   @Test
