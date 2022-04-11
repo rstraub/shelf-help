@@ -3,11 +3,19 @@ package nl.codecraftr.shelfhelp;
 import nl.codecraftr.shelfhelp.csv.CsvBookRepository;
 
 /**
- * Hello world.
+ * Shelf help.
  */
 public class App {
 
+  /**
+   * Cli runner.
+   */
   public static void main(String[] args) {
-    new CsvBookRepository("./src/test/resources/books.csv").getAll().forEach(System.out::println);
+    if (args.length == 0) {
+      throw new IllegalArgumentException("No file path for books specified");
+    }
+    var path = args[0];
+
+    new CsvBookRepository(path).getAll().forEach(System.out::println);
   }
 }
