@@ -29,3 +29,8 @@ Both estimates are classified like this:
 Using these estimates Shelf-help calculates a score per book, and uses that to sort them from most
 to least valuable. Most valuable being a book with *Very Low* effort and *Very High* payoff, and
 least valuable a book with *Very High* effort and *Very Low* payoff.
+
+## TODO
+
+- [ ] Alternatively write output to a new file
+- [ ] More robust error handling
