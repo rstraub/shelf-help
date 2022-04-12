@@ -7,11 +7,13 @@ import java.util.Set;
 import nl.codecraftr.shelfhelp.domain.model.Book;
 import nl.codecraftr.shelfhelp.domain.model.Effort;
 import nl.codecraftr.shelfhelp.domain.model.Payoff;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class ReadingOrderServiceTest {
 
   @Test
+  @Disabled
   void shouldReturnBooksFromMostToLeastValuable() {
     var expected = List.of(
         new Book("Programmers Brain", Effort.VERY_LOW, Payoff.MEDIUM), // 5 + 3
