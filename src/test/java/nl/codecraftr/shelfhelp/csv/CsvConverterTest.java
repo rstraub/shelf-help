@@ -56,4 +56,32 @@ class CsvConverterTest {
 
     assertThat(result).isEqualTo(expected);
   }
+
+  @Test
+  void shouldConvertPayoffShortHandsToPayoff() {
+    var shorthands = List.of(
+        "VL",
+        "L",
+        "M",
+        "H",
+        "VH"
+    );
+
+    var expected = List.of(
+        Payoff.VERY_LOW,
+        Payoff.LOW,
+        Payoff.MEDIUM,
+        Payoff.HIGH,
+        Payoff.VERY_HIGH
+    );
+
+    var result = shorthands
+        .stream()
+        .map("book,MEDIUM,%s"::formatted)
+        .map(CsvConverter::toBook)
+        .map(Book::payoff)
+        .collect(Collectors.toList());
+
+    assertThat(result).isEqualTo(expected);
+  }
 }
