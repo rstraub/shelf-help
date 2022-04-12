@@ -2,6 +2,7 @@ package nl.codecraftr.shelfhelp;
 
 import nl.codecraftr.shelfhelp.csv.CsvBookRepository;
 import nl.codecraftr.shelfhelp.domain.model.Book;
+import nl.codecraftr.shelfhelp.readingorder.ReadingOrderService;
 
 /**
  * Shelf help.
@@ -17,6 +18,11 @@ public class ShelfHelp {
     }
     var path = args[0];
 
-    new CsvBookRepository(path).getAll().stream().map(Book::title).forEach(System.out::println);
+    var unsorted = new CsvBookRepository(path).getAll();
+
+    ReadingOrderService
+        .optimallyOrdered(unsorted)
+        .stream().map(Book::title)
+        .forEach(System.out::println);
   }
 }
