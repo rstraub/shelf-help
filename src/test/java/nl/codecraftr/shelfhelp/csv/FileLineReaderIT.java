@@ -11,9 +11,9 @@ class FileLineReaderIT {
   void shouldReturnListOfLinesGivenFile() {
     var expected = List.of(
         "Title,Effort,Payoff",
-        "Pragmatic Programmer,LOW,MEDIUM",
-        "Programmers Brain,VERY_LOW,MEDIUM",
-        "Domain Driven Design,HIGH,VERY_HIGH"
+        "Pragmatic Programmer,L,M",
+        "Programmers Brain,VL,M",
+        "Domain Driven Design,H,VH"
     );
 
     var fileReader = new FileLineReader("./src/test/resources/books.csv");
