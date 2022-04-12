@@ -1,4 +1,4 @@
-package nl.codecraftr.shelfhelp.readingorder;
+package nl.codecraftr.shelfhelp.domain;
 
 import java.util.Comparator;
 import java.util.List;

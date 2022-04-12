@@ -1,4 +1,4 @@
-package nl.codecraftr.shelfhelp.readingorder;
+package nl.codecraftr.shelfhelp.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

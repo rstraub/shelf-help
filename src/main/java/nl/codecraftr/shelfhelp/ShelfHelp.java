@@ -1,8 +1,8 @@
 package nl.codecraftr.shelfhelp;
 
 import nl.codecraftr.shelfhelp.csv.CsvBookRepository;
+import nl.codecraftr.shelfhelp.domain.ReadingOrderService;
 import nl.codecraftr.shelfhelp.domain.model.Book;
-import nl.codecraftr.shelfhelp.readingorder.ReadingOrderService;
 
 /**
  * Shelf help.
