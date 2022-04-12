@@ -2,7 +2,6 @@ package nl.codecraftr.shelfhelp;
 
 import nl.codecraftr.shelfhelp.csv.CsvBookRepository;
 import nl.codecraftr.shelfhelp.domain.ReadingOrderService;
-import nl.codecraftr.shelfhelp.domain.model.Book;
 
 /**
  * Shelf help.
@@ -23,7 +22,7 @@ public class ShelfHelp {
 
     ReadingOrderService
         .optimallyOrdered(unsorted)
-        .stream().map(Book::title)
+        .stream().map(b -> "%s (score %s)".formatted(b.title(), b.calculateScore()))
         .forEach(System.out::println);
   }
 }
