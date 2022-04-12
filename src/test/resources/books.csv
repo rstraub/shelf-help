@@ -1,4 +1,4 @@
 Title,Effort,Payoff
-Pragmatic Programmer,LOW,MEDIUM
-Programmers Brain,VERY_LOW,MEDIUM
-Domain Driven Design,HIGH,VERY_HIGH
+Pragmatic Programmer,L,MEDIUM
+Programmers Brain,VL,MEDIUM
+Domain Driven Design,H,VERY_HIGH

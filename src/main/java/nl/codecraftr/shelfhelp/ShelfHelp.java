@@ -18,6 +18,7 @@ public class ShelfHelp {
     }
     var path = args[0];
 
+    // TODO application service for combining retrieving books and sorting
     var unsorted = new CsvBookRepository(path).getAll();
 
     ReadingOrderService
