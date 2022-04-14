@@ -18,10 +18,8 @@ public class ShelfHelp {
     var path = args[0];
 
     // TODO application service for combining retrieving books and sorting
-    var unsorted = new CsvBookRepository(path).getAll();
-
-    ReadingOrderService
-        .optimallyOrdered(unsorted)
+    new ReadingOrderService(new CsvBookRepository(path))
+        .optimallyOrdered()
         .stream().map(b -> "%s (score %s)".formatted(b.title(), b.calculateScore()))
         .forEach(System.out::println);
   }
